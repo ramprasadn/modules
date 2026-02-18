@@ -190,13 +190,6 @@ output:
           pattern: "*.ped_check.rel-difference.csv"
           ontologies:
             - edam: http://edamontology.org/format_3752 # CSV
-  versions:
-    - versions.yml:
-        type: file
-        description: File containing software versions
-        pattern: "versions.yml"
-        ontologies:
-          - edam: http://edamontology.org/format_3750 # YAML
 authors:
   - "@rannick"
 maintainers:
