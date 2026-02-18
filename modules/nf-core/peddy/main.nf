@@ -23,7 +23,7 @@ process PEDDY {
     tuple val(meta), path("${prefix}.ped_check.csv")                , optional: true, emit: ped_check_csv
     tuple val(meta), path("${prefix}.sex_check.csv")                , optional: true, emit: sex_check_csv
     tuple val(meta), path("${prefix}.ped_check.rel-difference.csv") , optional: true, emit: ped_check_rel_difference_csv
-    tuple val("${task.process}"), val("peddy"), eval("peddy --version 2>&1 | tail -1 | sed 's/peddy, version //'"), topic: versions, emit: versions_peddy
+    tuple val("${task.process}"), val("peddy"), eval("peddy --version 2>&1 | sed 's/peddy, version //'"), topic: versions, emit: versions_peddy
 
     when:
     task.ext.when == null || task.ext.when
