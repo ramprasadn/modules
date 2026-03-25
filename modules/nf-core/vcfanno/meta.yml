@@ -57,12 +57,9 @@ output:
           description: |
             Groovy Map containing sample information
             e.g. [ id:'test', single_end:false ]
-          pattern: "*.vcf.gz"
-      - "*.vcf.gz":
-          type: map
-          description: |
-            Groovy Map containing sample information
-            e.g. [ id:'test', single_end:false ]
+      - "${prefix}.vcf.gz":
+          type: file
+          description: Annotated VCF file
           pattern: "*.vcf.gz"
   tbi:
     - - meta:
@@ -70,12 +67,9 @@ output:
           description: |
             Groovy Map containing sample information
             e.g. [ id:'test', single_end:false ]
-          pattern: "*.vcf.gz"
-      - "*.vcf.gz.tbi":
-          type: map
-          description: |
-            Groovy Map containing sample information
-            e.g. [ id:'test', single_end:false ]
+      - "${prefix}.vcf.gz.tbi":
+          type: file
+          description: Annotated VCF index
           pattern: "*.vcf.gz.tbi"
   versions_vcfanno:
     - - ${task.process}:

@@ -4,11 +4,11 @@
             "test_compressed.vcf.gz",
             null
         ],
+        "timestamp": "2026-02-04T13:57:00.201785",
         "meta": {
             "nf-test": "0.9.3",
             "nextflow": "25.10.3"
-        },
-        "timestamp": "2026-02-04T13:57:00.201785"
+        }
     },
     "sarscov2 - [vcf(gz), tbi, vcf], [], toml, [vcf, tbi]": {
         "content": [
@@ -65,11 +65,11 @@
                 ]
             }
         ],
+        "timestamp": "2026-02-04T15:57:31.157631",
         "meta": {
             "nf-test": "0.9.3",
             "nextflow": "25.10.3"
-        },
-        "timestamp": "2026-02-04T15:57:31.157631"
+        }
     },
     "sarscov2 - [vcf, [], vcf], [], toml, [vcf, tbi]": {
         "content": [
@@ -126,10 +126,10 @@
                 ]
             }
         ],
+        "timestamp": "2026-02-04T15:57:35.91459",
         "meta": {
             "nf-test": "0.9.3",
             "nextflow": "25.10.3"
-        },
-        "timestamp": "2026-02-04T15:57:35.91459"
+        }
     }
 }

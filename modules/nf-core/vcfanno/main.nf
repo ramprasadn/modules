@@ -14,8 +14,8 @@ process VCFANNO {
     path resources
 
     output:
-    tuple val(meta), path("*.vcf.gz")       , emit: vcf
-    tuple val(meta), path("*.vcf.gz.tbi")   , emit: tbi
+    tuple val(meta), path("${prefix}.vcf.gz")       , emit: vcf
+    tuple val(meta), path("${prefix}.vcf.gz.tbi")   , emit: tbi
     tuple val("${task.process}"), val('vcfanno'), eval("vcfanno 2>&1 | sed -n 's/.*version \\([0-9.]\\+\\).*/\\1/p'"), topic: versions, emit: versions_vcfanno
 
     when:
@@ -25,7 +25,7 @@ process VCFANNO {
     def args    = task.ext.args ?: ''
     def args2   = task.ext.args2 ?: ''
     def args3   = task.ext.args3 ?: ''
-    def prefix  = task.ext.prefix ?: "${meta.id}"
+    prefix  = task.ext.prefix ?: "${meta.id}"
     def lua_cmd = lua ? "--lua ${lua}" : ""
     """
     vcfanno \\
@@ -41,7 +41,7 @@ process VCFANNO {
     """
 
     stub:
-    def prefix = task.ext.prefix ?: "${meta.id}"
+    prefix = task.ext.prefix ?: "${meta.id}"
     """
     echo "" | gzip > ${prefix}.vcf.gz
     touch ${prefix}.vcf.gz.tbi
